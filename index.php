@@ -4,5 +4,5 @@ require "connection.php";
 ?>
 <html>
 
-<h1>Manusha</h1>
+<h1>Manushaj</h1>
 </html>
