@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, input, select, textarea, button, label, 
+.dashboard-container, .dashboard-sidebar, .dashboard-content, 
+.card, .table, th, td, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* General Page Styles */
+.dashboard-container {
+    padding: 20px;
+    text-align: left;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4b0082;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Grid Layout for Menu Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.dashboard-card {
+    background: linear-gradient(135deg, #4b0082, #8a2be2);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.dashboard-card .icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card h3 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Form Styles */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+/* Input, Select, and Textarea Fields */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Buttons */
+.btn-create, .btn-delete {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+}
+
+.btn-create {
+    background: #4b0082;
+    color: white;
+    border: none;
+}
+
+.btn-create:hover {
+    background: #8a2be2;
+}
+
+.btn-delete {
+    background: #ff4444;
+    color: white;
+    border: none;
+}
+
+.btn-delete:hover {
+    background: #cc0000;
+}
+
+/* Align Buttons with Input Fields */
+.add-member-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.add-member-form input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 250px;
+}
+
+/* Search Box */
+.search-bar {
+    width: 60%;
+    margin: 20px auto;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Table Styling */
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.table th {
+    background-color: #4b0082;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+/* Center align View Members button */
+.view-members-btn {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+    margin-left: 0px; 
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-member-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+}

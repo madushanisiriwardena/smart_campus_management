@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, input, select, textarea, button, label, 
+.dashboard-container, .dashboard-sidebar, .dashboard-content, 
+.card, .table, th, td, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ✅ Container - Matches File Sharing and Task Management */
+.manage-access-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Section Header - Purple Theme */
+h2 {
+    text-align: left;
+    font-weight: 600;
+    color: #6a0dad;
+    margin-bottom: 15px;
+}
+
+/* ✅ Form Styling */
+.access-form {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ✅ Inputs and Selects */
+.access-form select,
+.access-form input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #6a0dad;
+    background: white;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* ✅ Grant Access Button */
+.access-form .grant-btn {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.access-form .grant-btn:hover {
+    background: #5a0c9d;
+}
+
+/* ✅ Access Control List Table */
+.access-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* ✅ Table Header */
+.access-table thead {
+    background: #6a0dad;
+    color: white;
+}
+
+.access-table th {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px;
+}
+
+/* ✅ Table Rows */
+.access-table tbody tr {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.access-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* ✅ Remove Access Button */
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+}
+
+/* ✅ Fix Button Spacing */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+    .manage-access-container {
+        width: 95%;
+    }
+
+    .access-table th, .access-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .access-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .access-form button {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, input, select, textarea, button, label, 
+.dashboard-container, .dashboard-sidebar, .dashboard-content, 
+.card, .table, th, td, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Chat Title */
+.chat-title {
+    font-size: 24px;
+    color: #4b0082;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.chat-header select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Ensure the chat box background is white */
+#chat-box {
+    height: 350px;
+    overflow-y: auto;
+    background: #ffffff !important; /* Force white background */
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Chat Messages Container */
+#chat-messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default to left alignment */
+    gap: 5px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Message Box */
+.message-box {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sent Messages (Align Right) */
+.sent {
+    align-self: flex-start; /* 🔥 Moves sent messages to the right */
+    background-color: #DCF8C6; /* Light green for sender messages */
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Received Messages (Align Left) */
+.received {
+    align-self: flex-end; /* 🔥 Moves received messages to the left */
+    background-color: #e3faad; /* White background for received */
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Timestamp styling */
+.timestamp {
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}
+
+/* Date Header Styling */
+.date-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.chat-input textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    height: 50px;
+    resize: none;
+}
+
+/* Style file input to match other fields */
+.chat-input input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+/* Custom file upload button */
+.file-upload-label {
+    background: #4b0082;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.file-upload-label:hover {
+    background: #8a2be2;
+}
+
+/* Display selected file name */
+.file-name {
+    font-size: 14px;
+    color: #333;
+    margin-left: 10px;
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Align file upload with message input */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-input button {
+    background: #4b0082;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-input button:hover {
+    background: #8a2be2;
+}

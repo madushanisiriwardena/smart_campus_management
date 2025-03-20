@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, input, select, textarea, button, label, 
+.dashboard-container, .dashboard-sidebar, .dashboard-content, 
+.card, .table, th, td, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.task-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: left;
+    font-weight: 600;
+    color: #6a0dad; 
+    margin-bottom: 10px;
+}
+
+
+.success-message, .error-message {
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.task-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.task-form button {
+    background: #6a0dad;
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 16px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    width: fit-content; 
+    margin-top: 5px; 
+    margin-left: 0px; 
+    display: block;
+}
+
+.task-form button:hover {
+    background: #5a0c9d; 
+}
+
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.task-table thead {
+    background: #6a0dad;
+    color: white;
+}
+
+.task-table thead th {
+    font-size: 14px;  /* ✅ Smaller header font */
+    font-weight: 600; /* ✅ Bold for clarity */
+    text-align: left;
+    padding: 10px;
+}
+
+.task-table tbody tr {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.task-table td {
+    padding: 10px;
+}
+
+/* ✅ Update Button */
+.update-btn {
+    background-color: #4CAF50; /* ✅ Green color */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+
+/* ✅ Delete Button */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ✅ Dropdown Styling */
+.task-table select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .task-container {
+        width: 95%;
+    }
+
+    .task-table thead th, .task-table td {
+        font-size: 12px; /* ✅ Smaller font for mobile */
+    }
+
+    .task-form button {
+        font-size: 14px;
+    }
+
+    .update-btn, .delete-btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
