@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/*--------------------------------------------Body and Container Styles-----------------------------------------------------------*/
+
+body {
+    overflow: hidden; /* Prevent body from scrolling */
+}
+
+header {
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.container {
+    margin: 0px !important;
+    padding: 0px !important;
+    max-width: 100% !important;
+    flex: 1; /* Take up remaining space */
+    overflow: hidden; /* Prevent container from scrolling */
+}
+
+
+main {
+    flex: .99; /* Take up remaining space */
+    padding: 30px;
+    overflow-y: auto; /* Allow main section to scroll */
+    background-color: #f9f9f9; /* Optional: Add background color */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    color: white;
+}
+
+.header-left {
+    width: 16%;
+    border: #524f4f;
+}
+
+.logo img {
+    width: 100%;
+    background: #2a2a2a;
+    padding: 0;
+    border-right: 1px solid #524f4f ;
+}
+
+.header-right {
+    width: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header-right .welcome{
+    display: table;
+    padding-left: 20px;
+    column-gap: 10px;
+}
+
+
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-right: 15px;
+}
+
+.header-icons i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.profile {
+    position: relative;
+}
+
+.profile-menu {
+    display: none;
+    width: 150px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.profile-menu a:hover {
+    background: #7d28eb93;
+    color: white;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 16%;
+    background: #2a2a2a;
+    color: white;
+    padding-top: 20px;
+    border-top: 1px solid #524f4f;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sidebar li:hover {
+    background: #aaabac68;
+}
+
+/* Submenu Styles */
+.sidebar .submenu {
+    display: none;
+    background: #3a3a3a;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.sidebar .has-submenu:hover .submenu {
+    display: block;
+}
+
+.sidebar .submenu li {
+    padding: 10px;
+    display: block;
+}
+
+/* Refined Hover */
+.sidebar .submenu li:hover {
+    background: #5a5a5a; /* A slightly darker hover for submenus */
+}
+
+.sidebar li:not(.has-submenu):hover {
+    background: #aaabac68; /* Hover for top-level items */
+}
+
+main {
+    width: 80%;
+    padding: 20px;
+}
+
+/**/
+.profile-body{
+    background-color: #0000009d;
+    align-content: center;
+    justify-content: baseline;
+    height: 100%;
+}
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #555;
+    text-decoration: none;
+    background: #ddd;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.profile-container {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgb(255, 255, 255);
+}
+
+.profile-container h2, .profile-container h3 {
+    text-align: center;
+    color:  #7d28eb;
+    margin-bottom: 20px;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group label i {
+    margin-right: 10px;
+    color: #000000;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #9c7fc1,#7d28eb);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary i {
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background:  linear-gradient(135deg, #413550,#49138f);
+}
+
+.success {
+    color: #28a745;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: #dc3545;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/*--------------------------------------------User management-----------------------------------------------------------*/
+/* Table Styles */
+
+#content-area {
+    margin: 20px auto;
+    padding: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+#content-area h3 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 6px 2px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+table th {
+    background-color: #faefff; /* Light Alice Blue */
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table tr{
+    background-color: rgb(255, 255, 255);
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button[value="accept"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[value="reject"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/*--------------------------------------------Filter Options-----------------------------------------------------------*/
+
+/*--------------------------------------------Filter Options-----------------------------------------------------------*/
+
+.filter-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: block;
+}
+
+
+.filter-options {
+    display: flex; /* Use flexbox to align filter groups side by side */
+    gap: 100px; /* Add space between filter groups */
+    margin-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 5px;
+}
+
+.filter-group {
+    flex: 1; /* Each filter group takes equal width */
+}
+
+.filter-group h4 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.filter-group label:hover {
+    background-color: #f0f0f0;
+    border-color: #7d28eb;
+}
+
+.filter-group input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #7d28eb;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.filter-group input[type="checkbox"]:checked {
+    background-color: #7d28eb;
+    border-color: #7d28eb;
+}
+
+.filter-group input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-options {
+        flex-direction: column; /* Stack filter groups vertically on smaller screens */
+        gap: 10px;
+    }
+
+}
+
+table{
+    .action{
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+/*--------------------------Button---------------------------*/
+
+.btn-active{
+    color: white;
+    /*padding: 12px;*/
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-approved{
+    background-color: #28a745;
+    color: white;
+    /*padding: 12px;*/
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-reject{
+    background-color: #721c24;
+    color: white;
+    /*padding: 12px;*/
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
