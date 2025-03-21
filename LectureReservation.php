@@ -73,7 +73,7 @@ require "connection.php";
                     <div class="mb-3">
                         <label for="codeSelect" class="form-label">Select Code</label>
                         <select class="form-select" id="codeSelect" disabled>
-<!--                            <option value="" disabled selected>Select a code</option>-->
+                            <!--                            <option value="" disabled selected>Select a code</option>-->
                             <option value="A1">A1</option>
                             <option value="B2">B2</option>
                             <option value="C3">C3</option>

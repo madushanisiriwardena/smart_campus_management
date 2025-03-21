@@ -7,8 +7,8 @@
 
     <div class="header-right">
         <div class="welcome">
-            <h1>Admin Dashboard</h1>
-            <h2>Welcome Back Pavi!</h2>
+            <h1>Lecture Dashboard</h1>
+            <h2>Welcome Back Madushani!</h2>
         </div>
         <div class="header-icons">
             <i class="fas fa-bell"></i>

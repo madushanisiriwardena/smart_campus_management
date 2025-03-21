@@ -48,13 +48,23 @@ function reject(index) {
 }
 
 const reservations = [
-    { id: 1, date: "2024.03.17 02.30 - 2024.03.17 03.30", type: "Class Room", name: "A5", user: "Manusha", userType: "STUDENT", status: "Pending" },
-    { id: 2, date: "2024.03.18 10.00 - 2024.03.18 11.00", type: "Lab", name: "B2", user: "John", userType: "TEACHER", status: "Approved" },
-    { id: 3, date: "2024.03.19 09.00 - 2024.03.19 10.00", type: "Hall", name: "C1", user: "Alice", userType: "STAFF", status: "Rejected" }
+    { id: 1, date: "2024.03.17 02.30 - 2024.03.17 03.30", type: "Class Room", name: "A5", user: "Manusha", userType: "STUDENT", status: "Approved" },
+    { id: 2, date: "2024.03.18 10.00 - 2024.03.18 11.00", type: "Resources", name: "Computer Lab", user: "John", userType: "LECTURE", status: "Rejected" },
+    { id: 3, date: "2024.03.19 09.00 - 2024.03.19 10.00", type: "Equipment", name: "Projector", user: "Alice", userType: "STUDENT", status: "Pending" }
+];
+
+const reservationsStudent = [
+    { id: 1, code: "C2", type: "Class Room", name: "E001", status: "Active" },
+    { id: 1, code: "L2", type: "Resources", name: "Computer Lab", status: "Active" },
+    { id: 1, code: "E2", type: "Equipment", name: "Projector", status: "Active" },
+    { id: 1, code: "R2", type: "Resources", name: "Main Hall", status: "Active" },
+    { id: 1, code: "E1", type: "Equipment", name: "White Screen", status: "Active" },
 ];
 
 const resources = [
-    { id: 1, code: "A2", name: "A5", maxCount: "Manusha", status: "Pending" },
+    { id: 1, code: "A2", name: "Computer Lab", maxCount: "150", status: "Active" },
+    { id: 2, code: "E2", name: "Main Hall", maxCount: "500", status: "Active" },
+    { id: 3, code: "L1", name: "Library", maxCount: "50", status: "Active" },
 ];
 
 
@@ -72,7 +82,7 @@ function loadTableData() {
                 <td>${res.userType}</td>
                 <td id="status-${res.id}">${res.status}</td>
                 <td class="action">
-                    <button type="button" class="btn btn-success" onclick="approve(${res.id});">Approve</button>
+                    <button type="button" class="btn btn-success" onclick="approved(${res.id});">Approve</button>
                     <button type="button" class="btn btn-danger" onclick="reject(${res.id});">Reject</button>
                 </td>
             </tr>`;
@@ -104,14 +114,12 @@ function loadSReservationData() {
     let tableBody = document.getElementById("tableBody");
     tableBody.innerHTML = ""; // Clear existing rows
 
-    reservations.forEach((res, index) => {
+    reservationsStudent.forEach((res, index) => {
         let row = `<tr>
                 <th scope="row">${index + 1}</th>
-                <td>${res.date}</td>
+                <td>${res.code}</td>
                 <td>${res.type}</td>
                 <td>${res.name}</td>
-                <td>${res.user}</td>
-                <td>${res.userType}</td>
                 <td id="status-${res.id}">${res.status}</td>
                 <td class="action">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#p3"">Booking</button>
@@ -119,4 +127,40 @@ function loadSReservationData() {
             </tr>`;
         tableBody.innerHTML += row;
     });
+}
+
+function book(index) {
+    if (index === 1) {
+        Swal.fire({
+            title: "Error!",
+            text: "That time slot is not available in this facility.",
+            icon: "error",
+            confirmButtonColor: "#d33",
+            confirmButtonText: "OK",
+            backdrop: false, // Keeps background visible
+        });
+    } else if (index === 2) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to Book this?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Book it!",
+            cancelButtonText: "No, cancel!",
+            backdrop: false, // Prevents background dimming or hiding
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Booked!",
+                    text: "The reservation has been Success.",
+                    icon: "success",
+                    confirmButtonColor: "#3085d6",
+                    backdrop: false, // Keeps background visible
+                });
+                // Add your approval logic here if needed
+            }
+        });
+    }
 }
